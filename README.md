@@ -8,9 +8,7 @@ This is a little sample project that I did after an interview to showcase:
 It is built on the premise that you are given an integer and you need to reduce the number down by adding the digits
 of the number together iteratively until the final number is less than 10.
 
-So for example, given the number 1919
-  first iteration: 20
-  final iteration: 2
+So for example, given the number 1919; the first iterationw would be: 20 and last iteration would be: 2
 
 The application lets the user choose between two implementations as well as choose how the results are displayed.
 

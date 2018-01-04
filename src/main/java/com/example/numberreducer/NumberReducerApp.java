@@ -1,7 +1,7 @@
 package com.example.numberreducer;
-import com.example.numberreducer.Display.DisplayVisitorFactory;
-import com.example.numberreducer.Display.IDisplayVisitor;
-import com.example.numberreducer.api.INumberReducer;
+import com.example.numberreducer.display.DisplayVisitorFactory;
+import com.example.numberreducer.display.DisplayVisitor;
+import com.example.numberreducer.api.NumberReducer;
 import com.example.numberreducer.dtos.ResultDTO;
 import com.example.numberreducer.dtos.SampleDTO;
 import com.example.numberreducer.implementations.NumberReducerFactory;
@@ -23,9 +23,9 @@ public class NumberReducerApp {
     //final static Logger LOGGER = Logger.getLogger(NumberReducerApp.class.getName());
 
     // Implementations based on what the user specified
-    private INumberReducer numberReducer;
+    private NumberReducer numberReducer;
 
-    private IDisplayVisitor displayVisitor;
+    private DisplayVisitor displayVisitor;
 
     //*************************************************************************************************
     //*  Arg4j Argument Specification
@@ -42,7 +42,7 @@ public class NumberReducerApp {
     private DisplayVisitorFactory.DISPLAY_TYPE displayType;
 
     @Argument
-    private List<String> arguments = new ArrayList<String>();
+    private List<String> arguments = new ArrayList<>();
 
 
 
@@ -85,7 +85,7 @@ public class NumberReducerApp {
                 throw new CmdLineException(parser,"Reducer type was not specified");
 
             if ( displayType == null )
-                throw new CmdLineException(parser,"Display type was not specified");
+                throw new CmdLineException(parser,"display type was not specified");
 
             // Check the arguments are valid
             for( String arg : arguments ) {

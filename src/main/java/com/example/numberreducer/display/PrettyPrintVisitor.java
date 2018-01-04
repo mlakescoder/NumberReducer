@@ -1,14 +1,14 @@
-package com.example.numberreducer.Display;
+package com.example.numberreducer.display;
 
 import com.example.numberreducer.dtos.ResultDTO;
 import com.example.numberreducer.dtos.SampleDTO;
 
-public class PrettyPrintVisitor implements IDisplayVisitor {
+public class PrettyPrintVisitor implements DisplayVisitor {
     private final String CR = System.lineSeparator();
 
     @Override
     public String visit(ResultDTO result) {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         sb.append("============Result=================================" + CR);
         sb.append("Sample UUID:   " + result.getSample().getSampleUUID() + CR);
         sb.append("Start Time:    " + result.getStartTime() + CR);
@@ -22,7 +22,7 @@ public class PrettyPrintVisitor implements IDisplayVisitor {
 
     @Override
     public String visit(SampleDTO sample) {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         sb.append("**************Sample********************************" + CR);
         sb.append("Sample UUID:   " + sample.getSampleUUID().toString() + CR);
         sb.append("Time Submitted:" + sample.getSubmitTime() + CR);

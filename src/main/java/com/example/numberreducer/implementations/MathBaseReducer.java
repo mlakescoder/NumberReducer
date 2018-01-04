@@ -1,25 +1,21 @@
 package com.example.numberreducer.implementations;
 
-import com.example.numberreducer.api.INumberReducer;
-import com.example.numberreducer.dtos.ResultDTO;
-import com.example.numberreducer.dtos.SampleDTO;
+import com.example.numberreducer.api.NumberReducer;
 
-import java.time.LocalDateTime;
-
-public class MathBaseReducer extends BaseReducer implements INumberReducer {
+public class MathBaseReducer extends BaseReducer implements NumberReducer {
 
 
     /**
      * Process the number by dividing by 10 to get each digit
      *
-     * @param value
-     * @return
+     * @param value - the number to be reduced
+     * @return the reduced number (one pass)
      */
     @Override
     protected Integer processNumber(Integer value) {
         Integer reducedValue = 0;
         Integer baseValue = value;
-        Integer digit = 0;
+        Integer digit;
 
         do  {
             if (baseValue > 9) {

@@ -1,6 +1,6 @@
 package com.example.numberreducer.dtos;
 
-import com.example.numberreducer.Display.IDisplayVisitor;
+import com.example.numberreducer.display.DisplayVisitor;
 
 import java.io.Serializable;
 
@@ -64,7 +64,7 @@ public class ResultDTO implements Visitable, Serializable{
     //*******************
 
     @Override
-    public String accept(IDisplayVisitor visitor) {
+    public String accept(DisplayVisitor visitor) {
         return visitor.visit(this);
     }
 

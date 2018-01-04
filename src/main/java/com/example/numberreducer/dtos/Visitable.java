@@ -1,6 +1,6 @@
 package com.example.numberreducer.dtos;
 
-import com.example.numberreducer.Display.IDisplayVisitor;
+import com.example.numberreducer.display.DisplayVisitor;
 
 /**
  * Interface to visit the different elements.
@@ -11,5 +11,5 @@ public interface Visitable {
      * @param visitor
      * @return string containing the output requested as created by the implementation
      */
-    String accept(IDisplayVisitor visitor);
+    String accept(DisplayVisitor visitor);
 }

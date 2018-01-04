@@ -1,8 +1,6 @@
 package com.example.numberreducer.implementations;
 
-import com.example.numberreducer.api.INumberReducer;
-import com.example.numberreducer.implementations.ByteBaseReducer;
-import com.example.numberreducer.implementations.MathBaseReducer;
+import com.example.numberreducer.api.NumberReducer;
 
 public class NumberReducerFactory {
 
@@ -13,10 +11,10 @@ public class NumberReducerFactory {
     /**
      * Return the implementation that the user asked for
      *
-     * @param reducerType
+     * @param reducerType - the type of the reducer desired
      * @return
      */
-    public static INumberReducer getNumberReducer(NUMBER_REDUCER reducerType){
+    public static NumberReducer getNumberReducer(NUMBER_REDUCER reducerType){
         if(reducerType == null){
             throw new IllegalArgumentException("Reducer Type not specified");
         }

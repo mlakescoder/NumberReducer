@@ -1,19 +1,14 @@
 package com.example.numberreducer.implementations;
 
-import com.example.numberreducer.api.INumberReducer;
-import com.example.numberreducer.dtos.ResultDTO;
-import com.example.numberreducer.dtos.SampleDTO;
+import com.example.numberreducer.api.NumberReducer;
 
-import java.math.BigInteger;
-import java.time.LocalDateTime;
-
-public class ByteBaseReducer extends BaseReducer implements INumberReducer {
+public class ByteBaseReducer extends BaseReducer implements NumberReducer {
 
     /**
      * Split the number by getting each char of the string that represents it
      *
-     * @param value
-     * @return
+     * @param value - the number to be reduced (one pass)
+     * @return reduced number
      */
     @Override
     protected Integer processNumber(Integer value) {
@@ -28,7 +23,7 @@ public class ByteBaseReducer extends BaseReducer implements INumberReducer {
      * digits together
      *
      * @param digits - array of digits to be processed
-     * @return
+     * @return reduced number
      */
     private Integer processNumber(int[] digits) {
         Integer value = 0;

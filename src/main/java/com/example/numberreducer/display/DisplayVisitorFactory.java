@@ -1,4 +1,4 @@
-package com.example.numberreducer.Display;
+package com.example.numberreducer.display;
 
 public class DisplayVisitorFactory {
     /**
@@ -10,10 +10,10 @@ public class DisplayVisitorFactory {
 
     /**
      * Create the v
-     * @param displayType
-     * @return
+     * @param displayType: the type of the display visitor
+     * @return Returns the desired implementation
      */
-    public static IDisplayVisitor getDisplayVisitor(DISPLAY_TYPE displayType){
+    public static DisplayVisitor getDisplayVisitor(DISPLAY_TYPE displayType){
         if(displayType == null){
             throw new IllegalArgumentException("Reducer Type not specified");
         }
